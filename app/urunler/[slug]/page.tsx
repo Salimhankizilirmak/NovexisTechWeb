@@ -1,0 +1,37 @@
+import { notFound } from "next/navigation";
+import ProductDetail from "@/components/ProductDetail";
+import { findProductBySlug, PRODUCTS } from "@/data/products";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = findProductBySlug(slug);
+  if (!product) return { title: "Ürün Bulunamadı | Yalıtım Fabrikası" };
+  return {
+    title: `${product.title} | Yalıtım Fabrikası`,
+    description: product.summary,
+  };
+}
+
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = findProductBySlug(slug);
+  if (!product) notFound();
+
+  return (
+    <main className="pt-24">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <ProductDetail
+          title={product.title}
+          summary={product.summary}
+          specs={product.specs}
+          images={product.images}
+          pdfDownloadUrl={product.pdfDownloadUrl}
+        />
+      </section>
+    </main>
+  );
+}
+
+export function generateStaticParams() {
+  return PRODUCTS.map((p) => ({ slug: p.slug }));
+}
