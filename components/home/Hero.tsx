@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <Image src="/images/hero.svg" alt="Hitit Yalıtım üretim hattı" fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-900/70 via-red-700/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-green-900/70 via-green-700/50 to-transparent" />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-24 sm:pt-40 sm:pb-32">
         <motion.div
@@ -26,13 +26,13 @@ export default function Hero() {
           <div className="mt-8 flex items-center gap-3">
             <Link
               href="#hizli-iletisim"
-              className="rounded-full bg-white text-red-700 px-6 py-3 text-sm font-semibold shadow hover:shadow-lg transition"
+              className="rounded-full bg-white text-green-700 px-6 py-3 text-sm font-semibold shadow hover:shadow-lg transition"
             >
               Teklif Al
             </Link>
             <Link
               href="/urunler"
-              className="rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 text-sm font-semibold shadow hover:shadow-red-500/30 hover:shadow-lg transition"
+              className="rounded-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 text-sm font-semibold shadow hover:shadow-green-500/30 hover:shadow-lg transition"
             >
               Ürünleri Keşfet
             </Link>
@@ -42,3 +42,5 @@ export default function Hero() {
     </section>
   );
 }
+
+

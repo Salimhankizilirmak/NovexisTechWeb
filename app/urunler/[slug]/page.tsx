@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ProductDetail from "@/components/ProductDetail";
+import ProductDetail from "@/components/products/ProductDetail";
 import { findProductBySlug, PRODUCTS } from "@/data/products";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {

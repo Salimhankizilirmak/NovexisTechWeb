@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import LoadingOverlay from "@/components/LoadingOverlay";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import LoadingOverlay from "@/components/layout/LoadingOverlay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="tr" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-slate-900`}> 
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-red-50 text-red-950 dark:bg-red-950 dark:text-red-50`}>
         <LoadingOverlay />
         <Header />
         {children}

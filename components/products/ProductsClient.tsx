@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
 
 type Product = {
   id: number;
@@ -33,7 +33,7 @@ export default function ProductsClient({
           <button
             key={c}
             className={`px-4 py-2 rounded-full text-sm border transition ${
-              active === c ? "bg-red-600 text-white border-red-600" : "bg-white text-slate-700 border-black/10 hover:bg-slate-50"
+              active === c ? "bg-red-600 text-white border-red-600" : "bg-red-50 dark:bg-red-900 text-red-900 dark:text-red-100 border-red-200/50 dark:border-red-900/50 hover:bg-red-100 dark:hover:bg-red-800"
             }`}
             onClick={() => setActive(c)}
           >
@@ -50,3 +50,5 @@ export default function ProductsClient({
     </div>
   );
 }
+
+

@@ -21,3 +21,5 @@ export default function Counter({ to, duration = 1200, suffix = "" }: { to: numb
 
   return <span>{value.toLocaleString()} {suffix}</span>;
 }
+
+
