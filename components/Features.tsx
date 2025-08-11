@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Features() {
   const items = [
     { title: "Düşük Isı İletkenliği", desc: "λ=0.035 W/mK değerine kadar inen ürün portföyü ile enerji verimliliği.", icon: (
@@ -14,16 +17,31 @@ export default function Features() {
   return (
     <section className="py-20 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                  <h2 className="text-2xl font-bold text-slate-900">Neden Hitit Yalıtım?</h2>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                      {items.map((f, idx) => (
-              <div key={idx} className="rounded-xl border border-black/5 dark:border-white/10 bg-white p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-0.5">
-                <div className="text-red-600">{f.icon}</div>
-                <h3 className="mt-3 font-semibold text-slate-900">{f.title}</h3>
-                <p className="mt-1 text-sm text-slate-600">{f.desc}</p>
+        <h2 className="text-2xl font-bold text-slate-900">Neden Hitit Yalıtım?</h2>
+        <motion.div
+          className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            show: { opacity: 1, transition: { staggerChildren: 0.12 } },
+          }}
+        >
+          {items.map((f, idx) => (
+            <motion.div
+              key={idx}
+              variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
+              className="rounded-2xl border border-black/5 dark:border-white/10 bg-white p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-0.5"
+            >
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-red-600 to-red-700 text-white">
+                {f.icon}
               </div>
-            ))}
-        </div>
+              <h3 className="mt-4 font-semibold text-slate-900">{f.title}</h3>
+              <p className="mt-1 text-sm text-slate-600">{f.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

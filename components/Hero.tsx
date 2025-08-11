@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -9,7 +11,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-tr from-red-900/70 via-red-700/50 to-transparent" />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-24 sm:pt-40 sm:pb-32">
-        <div className="max-w-2xl text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl text-white"
+        >
           <h1 className="text-3xl sm:text-5xl font-bold leading-tight tracking-tight">
             Yalıtımda Üstün Performans, Güvenilir Çözümler
           </h1>
@@ -17,14 +24,20 @@ export default function Hero() {
             Isı, ses ve yangın yalıtımında uluslararası standartlarda üretim. Projenize özel çözümler için uzman ekibimizle yanınızdayız.
           </p>
           <div className="mt-8 flex items-center gap-3">
-            <Link href="#hizli-iletisim" className="rounded-full bg-white text-red-700 px-6 py-3 text-sm font-semibold shadow hover:shadow-lg transition">
+            <Link
+              href="#hizli-iletisim"
+              className="rounded-full bg-white text-red-700 px-6 py-3 text-sm font-semibold shadow hover:shadow-lg transition"
+            >
               Teklif Al
             </Link>
-                         <Link href="/urunler" className="rounded-full bg-red-600 text-white px-6 py-3 text-sm font-semibold shadow hover:bg-red-700 transition">
+            <Link
+              href="/urunler"
+              className="rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 text-sm font-semibold shadow hover:shadow-red-500/30 hover:shadow-lg transition"
+            >
               Ürünleri Keşfet
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

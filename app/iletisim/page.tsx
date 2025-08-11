@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import Section from "@/components/Section";
 
 export const metadata = {
   title: "İletişim | Hitit Yalıtım",
@@ -8,7 +9,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="pt-24">
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Section>
         <h1 className="text-3xl font-bold text-slate-900">İletişim</h1>
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
@@ -17,7 +18,7 @@ export default function ContactPage() {
               <div><span className="font-medium">Telefon:</span> <a href="tel:+902122223344" className="text-red-700">+90 212 222 33 44</a></div>
               <div><span className="font-medium">E-posta:</span> <a href="mailto:info@hitityalitim.com" className="text-red-700">info@hitityalitim.com</a></div>
             </div>
-            <div className="mt-6 aspect-[16/9] w-full rounded-xl overflow-hidden border border-black/5">
+            <div className="mt-6 aspect-[16/9] w-full rounded-2xl overflow-hidden border border-black/5">
               <iframe
                 title="Harita"
                 src="https://maps.google.com/maps?q=İstanbul&t=&z=12&ie=UTF8&iwloc=&output=embed"
@@ -33,7 +34,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </main>
   );
 }
