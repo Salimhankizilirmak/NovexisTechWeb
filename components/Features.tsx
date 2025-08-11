@@ -12,17 +12,17 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-20 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-slate-900">Neden Yalıtım Fabrikası?</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">Neden Hitit Yalıtım?</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {items.map((f, idx) => (
-            <div key={idx} className="rounded-xl border border-black/5 dark:border-white/10 bg-white p-6 shadow-sm hover:shadow-lg transition">
-              <div className="text-sky-600">{f.icon}</div>
-              <h3 className="mt-3 font-semibold text-slate-900">{f.title}</h3>
-              <p className="mt-1 text-sm text-slate-600">{f.desc}</p>
-            </div>
-          ))}
+                      {items.map((f, idx) => (
+              <div key={idx} className="rounded-xl border border-black/5 dark:border-white/10 bg-white p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-0.5">
+                <div className="text-red-600">{f.icon}</div>
+                <h3 className="mt-3 font-semibold text-slate-900">{f.title}</h3>
+                <p className="mt-1 text-sm text-slate-600">{f.desc}</p>
+              </div>
+            ))}
         </div>
       </div>
     </section>

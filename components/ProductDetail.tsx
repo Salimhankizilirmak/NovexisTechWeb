@@ -55,11 +55,11 @@ export default function ProductDetail({ title, summary, specs, images, pdfDownlo
           <a
             href={pdfDownloadUrl || "#"}
             target="_blank"
-            className="inline-flex items-center justify-center rounded-md bg-sky-600 text-white px-4 py-2 text-sm font-medium shadow hover:bg-sky-700"
+            className="inline-flex items-center justify-center rounded-md bg-red-600 text-white px-4 py-2 text-sm font-medium shadow hover:bg-red-700"
           >
             Teknik Föy (PDF)
           </a>
-          <a href="/iletisim#form" className="text-sm font-medium text-sky-700 hover:text-sky-800">Teklif İste →</a>
+          <a href="/iletisim#form" className="text-sm font-medium text-red-700 hover:text-red-800">Teklif İste →</a>
         </div>
       </div>
     </div>

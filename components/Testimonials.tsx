@@ -21,12 +21,12 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-slate-900">Müşteri Referansları</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           {items.map((t, idx) => (
-            <div key={idx} className="rounded-xl border border-black/5 dark:border-white/10 bg-white p-6 shadow-sm hover:shadow-lg transition">
+            <div key={idx} className="rounded-xl border border-black/5 dark:border-white/10 bg-white p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-0.5">
               <p className="text-slate-700">“{t.quote}”</p>
               <div className="mt-4 text-sm font-medium text-slate-900">{t.name}</div>
               <div className="text-xs text-slate-600">{t.company}</div>

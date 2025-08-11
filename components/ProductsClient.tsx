@@ -33,7 +33,7 @@ export default function ProductsClient({
           <button
             key={c}
             className={`px-4 py-2 rounded-full text-sm border transition ${
-              active === c ? "bg-sky-600 text-white border-sky-600" : "bg-white text-slate-700 border-black/10 hover:bg-slate-50"
+              active === c ? "bg-red-600 text-white border-red-600" : "bg-white text-slate-700 border-black/10 hover:bg-slate-50"
             }`}
             onClick={() => setActive(c)}
           >
@@ -42,7 +42,7 @@ export default function ProductsClient({
         ))}
       </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
         {filtered.map((p) => (
           <ProductCard key={p.id} {...p} />
         ))}

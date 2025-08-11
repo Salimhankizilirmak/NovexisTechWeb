@@ -1,4 +1,4 @@
-# Yalıtım Fabrikası — Next.js + TailwindCSS
+# Hitit Yalıtım — Next.js + TailwindCSS
 
 Modern, hızlı ve SEO dostu bir kurumsal web sitesi. Next.js (App Router) ve TailwindCSS 4 ile geliştirilmiştir. Tüm içerik Türkçe ve mobil uyumludur.
 

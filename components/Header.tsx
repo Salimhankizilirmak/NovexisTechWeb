@@ -16,28 +16,28 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-black/5 dark:border-white/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/images/logo.svg" alt="Yalıtım Fabrikası Logo" width={36} height={36} />
-            <span className="font-semibold text-base sm:text-lg text-sky-900 dark:text-sky-100">Yalıtım Fabrikası</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-slate-700 hover:text-sky-700 transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link
-              href="/iletisim#form"
-              className="inline-flex items-center justify-center rounded-full bg-sky-600 text-white text-sm px-4 py-2 shadow-sm hover:bg-sky-700 transition-colors"
-            >
-              Teklif Al
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <Link href="/" className="flex items-center gap-3">
+              <Image src="/images/logo.svg" alt="Hitit Yalıtım Logo" width={36} height={36} />
+              <span className="font-semibold text-base sm:text-lg text-red-700 dark:text-red-300">Hitit Yalıtım</span>
             </Link>
+            <nav className="hidden md:flex items-center gap-8">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-slate-700 hover:text-red-700 transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                href="/iletisim#form"
+                className="inline-flex items-center justify-center rounded-full bg-red-600 text-white text-sm px-4 py-2 shadow-sm hover:bg-red-700 transition-colors"
+              >
+                Teklif Al
+              </Link>
           </nav>
           <button
             aria-label="Menüyü aç/kapat"
@@ -57,7 +57,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-slate-700 hover:text-sky-700"
+                className="text-sm text-slate-700 hover:text-red-700"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
@@ -65,7 +65,7 @@ export default function Header() {
             ))}
             <Link
               href="/iletisim#form"
-              className="inline-flex items-center justify-center rounded-md bg-sky-600 text-white text-sm px-4 py-2 shadow-sm hover:bg-sky-700"
+              className="inline-flex items-center justify-center rounded-md bg-red-600 text-white text-sm px-4 py-2 shadow-sm hover:bg-red-700"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Teklif Al

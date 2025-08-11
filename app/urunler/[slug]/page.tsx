@@ -5,9 +5,9 @@ import { findProductBySlug, PRODUCTS } from "@/data/products";
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = findProductBySlug(slug);
-  if (!product) return { title: "Ürün Bulunamadı | Yalıtım Fabrikası" };
+  if (!product) return { title: "Ürün Bulunamadı | Hitit Yalıtım" };
   return {
-    title: `${product.title} | Yalıtım Fabrikası`,
+    title: `${product.title} | Hitit Yalıtım`,
     description: product.summary,
   };
 }

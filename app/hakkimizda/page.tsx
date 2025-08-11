@@ -2,18 +2,18 @@ import Counter from "@/components/Counter";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Hakkımızda | Yalıtım Fabrikası",
+  title: "Hakkımızda | Hitit Yalıtım",
   description:
-    "Yalıtım Fabrikası: Isı, ses ve yangın yalıtımında yerli üretim, modern tesisler ve yüksek kalite standartları.",
+    "Hitit Yalıtım: Isı, ses ve yangın yalıtımında yerli üretim, modern tesisler ve yüksek kalite standartları.",
 };
 
 export default function AboutPage() {
   return (
     <main className="pt-24">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-slate-900">Fabrika Hikayemiz</h1>
+                 <h1 className="text-3xl font-bold text-slate-900">Hitit Yalıtım Hikayemiz</h1>
         <p className="mt-4 text-slate-700 max-w-3xl">
-          2008 yılında temellerini attığımız Yalıtım Fabrikası, modern üretim teknolojileri ve
+          2008 yılında temellerini attığımız Hitit Yalıtım, modern üretim teknolojileri ve
           AR-GE odaklı yaklaşımıyla ısı, ses ve yangın yalıtımı alanlarında katma değerli ürünler
           geliştirir. Üretim hatlarımızda sürdürülebilirlik ilkelerini benimser, uluslararası
           standartlara uygun, sahada performansı kanıtlanmış çözümler sunarız.

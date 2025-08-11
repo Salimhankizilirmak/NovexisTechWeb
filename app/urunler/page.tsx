@@ -2,7 +2,7 @@ import ProductsClient from "@/components/ProductsClient";
 import { PRODUCTS, getAllCategories } from "@/data/products";
 
 export const metadata = {
-  title: "Ürünler | Yalıtım Fabrikası",
+  title: "Ürünler | Hitit Yalıtım",
   description: "Isı, ses ve yangın yalıtımı için yüksek performanslı ürün yelpazemizi keşfedin.",
 };
 

@@ -8,9 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand: #0369a1; /* sky-700 */
-  --color-brand-600: #0284c7; /* sky-600 */
-  --color-brand-50: #f0f9ff; /* sky-50 */
+  --color-brand: #dc2626; /* red-600 */
+  --color-brand-600: #dc2626; /* red-600 */
+  --color-brand-50: #fef2f2; /* red-50 */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -27,4 +27,36 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Smooth transitions for interactive elements */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Consistent focus ring aligned with brand */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px theme(colors.red.600 / 0.6);
+}
+
+/* Text selection brand tint */
+::selection {
+  background-color: theme(colors.red.600 / 0.2);
+}
+
+/* Subtle lift on hover for cards */
+.card-hover {
+  @apply transition-transform duration-300 will-change-transform;
+}
+.card-hover:hover {
+  @apply -translate-y-0.5;
+}
+
+/* Button base styling helper (optional) */
+.btn {
+  @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow;
+}
+.btn-primary {
+  @apply bg-red-600 text-white hover:bg-red-700;
 }

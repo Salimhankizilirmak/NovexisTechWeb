@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 import { PRODUCTS } from "@/data/products";
 
 export const metadata = {
-  title: "Yalıtım Fabrikası | Isı, Ses ve Yangın Yalıtım Çözümleri",
+  title: "Hitit Yalıtım | Isı, Ses ve Yangın Yalıtım Çözümleri",
   description:
     "Modern üretim ve teknik uzmanlıkla ısı, ses ve yangın yalıtımı ürünleri. Projenize özel çözümler ve hızlı teklif.",
 };
