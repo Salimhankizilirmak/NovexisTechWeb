@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 export type ProductDetailProps = {
   title: string;
@@ -10,56 +12,76 @@ export type ProductDetailProps = {
 
 export default function ProductDetail({ title, summary, specs, images, pdfDownloadUrl }: ProductDetailProps) {
   const gallery = images?.length ? images : ["/images/product-generic.svg"];
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const activeImage = gallery[Math.min(activeIndex, gallery.length - 1)];
+
   return (
     <div className="grid lg:grid-cols-2 gap-10">
+      {/* Sol: Galeri */}
       <div className="space-y-4">
-        <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-red-200/50 dark:border-red-900/50">
-          <Image src={gallery[0]} alt={`${title} ürün görseli`} fill className="object-cover" />
+        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-red-200/60 dark:border-red-900/60 bg-white dark:bg-red-900/30 shadow-sm">
+          <Image src={activeImage} alt={`${title} ürün görseli`} fill className="object-cover" />
         </div>
-        <div className="grid grid-cols-4 gap-3">
-          {gallery.slice(1).map((src, idx) => (
-            <div key={idx} className="relative aspect-square rounded-lg overflow-hidden border border-red-200/50 dark:border-red-900/50">
-              <Image src={src} alt={`${title} galeri ${idx + 2}`} fill className="object-cover" />
-            </div>
-          ))}
-        </div>
+        {gallery.length > 1 && (
+          <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+            {gallery.map((src, idx) => (
+              <button
+                type="button"
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                aria-label={`Galeri ${idx + 1}`}
+                aria-current={activeIndex === idx}
+                className={`relative aspect-square rounded-xl overflow-hidden border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-600 dark:focus:ring-red-400 ${
+                  activeIndex === idx
+                    ? "border-red-500 ring-1 ring-red-500"
+                    : "border-red-200/60 dark:border-red-900/60 hover:border-red-400 dark:hover:border-red-700"
+                }`}
+              >
+                <Image src={src} alt={`${title} galeri ${idx + 1}`} fill className="object-cover" />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
-      <div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-red-950 dark:text-red-50">{title}</h1>
-        <p className="mt-3 text-red-900 dark:text-red-100">{summary}</p>
 
-        <div className="mt-6 overflow-x-auto">
-          <table className="min-w-[360px] w-full text-sm border border-red-200/50 dark:border-red-900/50 rounded-lg overflow-hidden">
-            <tbody className="divide-y divide-red-200/50 dark:divide-red-900/50">
-              <tr className="bg-red-50/60 dark:bg-red-900/60">
-                <td className="px-4 py-3 font-medium text-red-900 dark:text-red-100">Genişlik</td>
-                <td className="px-4 py-3 text-red-900 dark:text-red-100">{specs.width}</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-medium text-red-900 dark:text-red-100">Kalınlık</td>
-                <td className="px-4 py-3 text-red-900 dark:text-red-100">{specs.height}</td>
-              </tr>
-              <tr className="bg-red-50/60 dark:bg-red-900/60">
-                <td className="px-4 py-3 font-medium text-red-900 dark:text-red-100">Isı İletkenlik (λ)</td>
-                <td className="px-4 py-3 text-red-900 dark:text-red-100">{specs.lambda}</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-medium text-red-900 dark:text-red-100">Kullanım Alanları</td>
-                <td className="px-4 py-3 text-red-900 dark:text-red-100">{specs.usage}</td>
-              </tr>
-            </tbody>
-          </table>
+      {/* Sağ: Başlık, özet, teknik özellikler ve CTA */}
+      <div className="lg:sticky lg:top-28 self-start">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{title}</h1>
+        <p className="mt-3 text-gray-900 font-semibold text-lg leading-relaxed">{summary}</p>
+
+        <div className="my-6 h-px bg-red-200/70 dark:bg-red-900/50" />
+
+        <div>
+          <div className="text-xs font-semibold uppercase tracking-wider text-gray-800 mb-3">Teknik Özellikler</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="rounded-2xl border border-red-200/70 dark:border-red-900/60 bg-red-50/60 dark:bg-red-900/40 p-4">
+              <div className="text-sm text-gray-800 font-medium">Genişlik</div>
+              <div className="mt-1 text-gray-900 font-semibold text-lg">{specs.width}</div>
+            </div>
+            <div className="rounded-2xl border border-red-200/70 dark:border-red-900/60 bg-red-50/60 dark:bg-red-900/40 p-4">
+              <div className="text-sm text-gray-800 font-medium">Kalınlık</div>
+              <div className="mt-1 text-gray-900 font-semibold text-lg">{specs.height}</div>
+            </div>
+            <div className="rounded-2xl border border-red-200/70 dark:border-red-900/60 bg-red-50/60 dark:bg-red-900/40 p-4">
+              <div className="text-sm text-gray-800 font-medium">Isı İletkenlik (λ)</div>
+              <div className="mt-1 text-gray-900 font-semibold text-lg">{specs.lambda}</div>
+            </div>
+            <div className="rounded-2xl border border-red-200/70 dark:border-red-900/60 bg-red-50/60 dark:bg-red-900/40 p-4 sm:col-span-2">
+              <div className="text-sm text-gray-800 font-medium">Kullanım Alanları</div>
+              <div className="mt-1 text-gray-900 font-semibold">{specs.usage}</div>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-6 flex items-center gap-3">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
           <a
             href={pdfDownloadUrl || "#"}
             target="_blank"
-            className="inline-flex items-center justify-center rounded-md bg-red-600 text-white px-4 py-2 text-sm font-medium shadow hover:bg-red-700"
+            className="inline-flex items-center justify-center rounded-md bg-red-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600"
           >
             Teknik Föy (PDF)
           </a>
-          <a href="/iletisim#form" className="text-sm font-medium text-red-700 hover:text-red-800">Teklif İste →</a>
+          <a href="/iletisim#form" className="text-sm font-semibold text-red-700 hover:text-red-800">Teklif İste →</a>
         </div>
       </div>
     </div>

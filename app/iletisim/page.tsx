@@ -1,31 +1,36 @@
 import ContactHero from "@/components/contact/ContactHero";
 import ContactChannels from "@/components/contact/ContactChannels";
 import Offices from "@/components/contact/Offices";
-import FAQ from "@/components/contact/FAQ";
 import Map from "@/components/contact/Map";
-import ContactForm from "@/components/forms/ContactForm";
+import FAQ from "@/components/contact/FAQ";
 
 export const metadata = {
-  title: "İletişim | Hitit Yalıtım",
-  description: "Bize ulaşın: adres, telefon, e-posta ve teklif formu.",
+  title: "İletişim - Hitit Yalıtım",
+  description: "Hitit Yalıtım ile iletişime geçin. Teknik destek, teklif ve satış için uzman ekibimiz hizmetinizde.",
 };
 
 export default function ContactPage() {
   return (
-    <main className="pt-16 bg-blue-50 dark:bg-blue-950 text-blue-950 dark:text-blue-50">
+    <main className="pt-16 bg-white text-gray-900 dark:bg-red-50 dark:text-red-900">
       <ContactHero />
       <ContactChannels />
       <Offices />
-      <FAQ />
       <Map />
-      <section className="py-16">
+      <FAQ />
+
+      <section id="teklif-ara" className="py-16 bg-red-50 dark:bg-red-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-blue-200/60 dark:border-blue-900/50 bg-white dark:bg-blue-900 p-6">
-            <h2 id="form" className="text-xl font-semibold text-blue-950 dark:text-blue-50">Teklif Formu</h2>
-            <p className="mt-2 text-sm text-blue-800 dark:text-blue-200">İhtiyacınızı kısaca paylaşın, size en uygun çözümü birlikte planlayalım.</p>
-            <div className="mt-4">
-              <ContactForm includeCompany includeKVKK />
-            </div>
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-red-900">Hızlı Teklif İçin Hemen Arayın</h2>
+            <p className="mt-2 text-gray-700 dark:text-red-800">Mesaj yerine telefonla anında teklif alın.</p>
+          </div>
+          <div className="flex justify-center">
+            <a
+              href="tel:+903642549550"
+              className="inline-flex items-center gap-2 rounded-2xl px-6 py-4 bg-red-600 text-white font-semibold shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600"
+            >
+              📞 +90 364 254 95 50'yi Ara
+            </a>
           </div>
         </div>
       </section>
