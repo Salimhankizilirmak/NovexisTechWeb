@@ -9,15 +9,15 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-neutral-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {items.map((s, idx) => (
-            <div key={idx} className="rounded-2xl border border-red-200/60 dark:border-red-900/50 p-6 bg-white dark:bg-red-900 text-center">
-              <div className="text-2xl font-extrabold text-red-700 dark:text-red-300">
+            <div key={idx} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900 text-center">
+              <div className="text-2xl font-extrabold text-white">
                 <Counter to={s.value} suffix={s.suffix} />
               </div>
-              <div className="mt-2 text-sm text-red-800 dark:text-red-200">{s.label}</div>
+              <div className="mt-2 text-sm text-neutral-300">{s.label}</div>
             </div>
           ))}
         </div>

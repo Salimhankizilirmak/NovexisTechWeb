@@ -18,7 +18,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
 
   return (
-    <main className="pt-24 bg-white text-red-900 dark:bg-red-50 dark:text-red-900">
+    <main className="pt-24 bg-neutral-950 text-neutral-100">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ProductDetail
           title={product.title}

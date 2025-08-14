@@ -24,23 +24,23 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-16 bg-white dark:bg-red-50">
+    <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-red-900">Sık Sorulan Sorular</h2>
-        <div className="mt-6 divide-y divide-red-200/60 dark:divide-red-300/60 rounded-2xl border border-red-200/60 dark:border-red-300/60 bg-white dark:bg-red-100 overflow-hidden shadow-lg">
+        <h2 className="text-2xl font-bold text-neutral-900">Sık Sorulan Sorular</h2>
+        <div className="mt-6 rounded-2xl border bg-white overflow-hidden shadow-lg" style={{ borderColor: "color-mix(in srgb, var(--btn-red) 25%, transparent)" }}>
           {faqs.map((item, idx) => (
-            <div key={idx}>
+            <div key={idx} className="border-b" style={{ borderColor: "color-mix(in srgb, var(--btn-red) 15%, transparent)" }}>
               <button
-                className="w-full text-left px-5 py-4 flex items-center justify-between text-gray-900 dark:text-red-900 hover:bg-red-50 dark:hover:bg-red-200/30 transition-colors"
+                className="w-full text-left px-5 py-4 flex items-center justify-between text-neutral-900 hover:opacity-90"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               >
                 <span className="font-medium">{item.q}</span>
-                <span className="text-red-600 dark:text-red-700">
+                <span style={{ color: "#3b1e46" }}>
                   {openIndex === idx ? "−" : "+"}
                 </span>
               </button>
               {openIndex === idx && (
-                <div className="px-5 pb-4 text-sm text-gray-700 dark:text-red-800">{item.a}</div>
+                <div className="px-5 pb-4 text-sm text-neutral-700">{item.a}</div>
               )}
             </div>
           ))}

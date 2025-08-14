@@ -1,33 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff; /* white */
-  --foreground: #1f2937; /* gray-800 */
+  /* Global colors per latest request */
+  --background: #cdcad9; /* new background */
+  --foreground: #111111; /* text stays dark for contrast */
+  --brand: #caa7d6; /* new accent (was red/anthracite) */
+  --brand-hover: #caa7d6; /* same accent for hover per request */
+  --brand-soft: #e9dff0; /* soft tint of accent */
+  --btn-red: #caa7d6; /* buttons use the same accent */
+  --btn-red-hover: #caa7d6; /* same for hover */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand: #dc2626; /* red-600 */
-  --color-brand-600: #dc2626; /* red-600 */
-  --color-brand-50: #fef2f2; /* red-50 */
-  --color-brand-100: #fee2e2; /* red-100 */
-  --color-brand-200: #fecaca; /* red-200 */
-  --color-brand-300: #fca5a5; /* red-300 */
-  --color-brand-400: #f87171; /* red-400 */
-  --color-brand-500: #ef4444; /* red-500 */
-  --color-brand-700: #b91c1c; /* red-700 */
-  --color-brand-800: #991b1b; /* red-800 */
-  --color-brand-900: #7f1d1d; /* red-900 */
-  --color-brand-950: #450a0a; /* red-950 */
+  --color-brand: var(--brand);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Force same palette regardless of system scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fef2f2; /* red-50 */
-    --foreground: #7f1d1d; /* red-900 */
+    --background: #cdcad9;
+    --foreground: #111111;
+    --brand: #caa7d6;
+    --brand-hover: #caa7d6;
+    --brand-soft: #e9dff0;
   }
 }
 
@@ -46,15 +45,15 @@ body {
   @apply transition-all duration-200 ease-in-out;
 }
 
-/* Consistent focus ring aligned with brand */
+/* Consistent focus ring aligned with accent */
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 30%, transparent);
 }
 
-/* Text selection brand tint */
+/* Text selection accent tint */
 ::selection {
-  background-color: rgba(220, 38, 38, 0.2);
+  background-color: color-mix(in srgb, var(--brand) 20%, transparent);
   color: inherit;
 }
 
@@ -67,42 +66,53 @@ body {
   @apply -translate-y-1 shadow-xl;
 }
 
-/* Modern button styling */
+/* Buttons */
 .btn {
   @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold shadow-lg transition-all duration-200 ease-out;
 }
 
 .btn-primary {
-  @apply bg-red-600 text-white hover:bg-red-700 hover:shadow-red-500/25 hover:-translate-y-0.5;
+  background-color: var(--btn-red);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: var(--btn-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px color-mix(in srgb, var(--btn-red) 30%, transparent);
 }
 
 .btn-secondary {
-  @apply bg-white text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white hover:-translate-y-0.5;
+  background-color: transparent;
+  color: var(--btn-red);
+  border: 2px solid var(--btn-red);
+}
+.btn-secondary:hover {
+  background-color: var(--btn-red);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
-/* Modern gradient backgrounds */
-.gradient-red {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+/* Accent tints */
+.brand-soft-bg {
+  background-color: var(--brand-soft);
 }
 
-.gradient-red-light {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+/* Brand gradient uses new accent */
+.gradient-brand {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-hover) 100%);
 }
 
-/* Modern shadows */
-.shadow-red {
-  box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.1), 0 10px 10px -5px rgba(220, 38, 38, 0.04);
+.gradient-brand-light {
+  background: linear-gradient(135deg, #f5f6f7 0%, #eceef1 100%);
 }
 
-/* Glass morphism effect */
-.glass {
-  backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Neutral shadow */
+.shadow-brand {
+  box-shadow: 0 10px 25px -5px color-mix(in srgb, var(--brand) 10%, transparent),
+    0 10px 10px -5px color-mix(in srgb, var(--brand) 6%, transparent);
 }
 
-.glass-red {
-  backdrop-filter: blur(16px);
-  background: rgba(220, 38, 38, 0.1);
-  border: 1px solid rgba(220, 38, 38, 0.2);
-}
+/* Override previously hardcoded dark backgrounds to new background color */
+.bg-neutral-950 { background-color: var(--background) !important; }
+.bg-neutral-900 { background-color: color-mix(in srgb, var(--background) 94%, #000 6%) !important; }
+.border-neutral-800 { border-color: color-mix(in srgb, var(--brand) 25%, #000 75%) !important; }

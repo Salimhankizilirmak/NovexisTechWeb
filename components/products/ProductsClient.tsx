@@ -34,8 +34,8 @@ export default function ProductsClient({
             key={c}
             className={`px-4 py-2 rounded-full text-sm border transition-all duration-200 ${
               active === c 
-                ? "bg-red-600 text-white border-red-600 shadow-lg" 
-                : "bg-white dark:bg-red-100 text-red-800 dark:text-red-800 border-red-200/50 dark:border-red-300/50 hover:bg-red-50 dark:hover:bg-red-200/50 hover:border-red-300 dark:hover:border-red-400 font-medium"
+                ? "bg-neutral-800 text-white border-neutral-700 shadow-lg" 
+                : "bg-neutral-900 text-neutral-200 border-neutral-800 hover:bg-neutral-800 hover:text-white"
             }`}
             onClick={() => setActive(c)}
           >

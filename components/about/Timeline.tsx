@@ -7,20 +7,20 @@ export default function Timeline() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-red-50 dark:from-red-950 dark:to-red-900/30">
+    <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-red-950 dark:text-red-50">Dönüm Noktaları</h2>
+        <h2 className="text-2xl font-bold text-neutral-900">Dönüm Noktaları</h2>
         <div className="mt-8 relative">
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-1 bg-red-200/70 dark:bg-red-900/60 rounded" />
+          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-1 rounded" style={{ backgroundColor: "color-mix(in srgb, var(--btn-red) 25%, transparent)" }} />
           <div className="space-y-8">
             {items.map((i, idx) => (
               <div key={idx} className={`relative flex ${idx % 2 === 0 ? "sm:justify-start" : "sm:justify-end"}`}>
                 <div className="w-full sm:w-1/2 px-8">
-                  <div className="relative rounded-xl border border-red-200/60 dark:border-red-900/50 bg-white dark:bg-red-900 p-5 shadow-sm">
-                    <div className="absolute -left-8 sm:left-auto sm:-right-8 top-5 h-3 w-3 rounded-full bg-red-600 ring-4 ring-red-100 dark:ring-red-950" />
-                    <div className="text-sm font-semibold text-red-700 dark:text-red-300">{i.year}</div>
-                    <div className="mt-1 text-red-950 dark:text-red-50 font-bold">{i.title}</div>
-                    <div className="mt-1 text-sm text-red-800 dark:text-red-200">{i.desc}</div>
+                  <div className="relative rounded-xl border bg-white p-5 shadow-sm" style={{ borderColor: "color-mix(in srgb, var(--btn-red) 20%, transparent)" }}>
+                    <div className="absolute -left-8 sm:left-auto sm:-right-8 top-5 h-3 w-3 rounded-full" style={{ backgroundColor: "var(--btn-red)", boxShadow: "0 0 0 6px color-mix(in srgb, var(--btn-red) 30%, transparent)" }} />
+                    <div className="text-sm font-semibold" style={{ color: "#3b1e46" }}>{i.year}</div>
+                    <div className="mt-1 text-neutral-900 font-bold">{i.title}</div>
+                    <div className="mt-1 text-sm text-neutral-700">{i.desc}</div>
                   </div>
                 </div>
               </div>
