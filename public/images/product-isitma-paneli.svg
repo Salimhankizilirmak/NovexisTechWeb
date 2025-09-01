@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 320">
-  <rect width="512" height="320" fill="#fff"/>
-  <rect x="56" y="100" width="400" height="120" rx="12" fill="#ffffff" stroke="#caa7d6" stroke-width="4"/>
-  <path d="M96 160c24 0 24-40 48-40s24 40 48 40 24-40 48-40 24 40 48 40 24-40 48-40 24 40 48 40" stroke="#caa7d6" stroke-width="4" fill="none"/>
-  <text x="256" y="300" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#3b1e46">Isıtma Panelleri</text>
-</svg>

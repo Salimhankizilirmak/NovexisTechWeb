@@ -1,8 +1,0 @@
-<svg width="600" height="450" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
-  <rect width="600" height="450" fill="#ffffff"/>
-  <rect x="40" y="40" width="520" height="370" fill="#f1f5f9" stroke="#cbd5e1"/>
-  <text x="60" y="120" font-size="28" fill="#0f172a" font-family="sans-serif">ISO 9001:2015</text>
-  <text x="60" y="170" font-size="20" fill="#334155" font-family="sans-serif">Kalite Yönetim Sistemi</text>
-  <rect x="60" y="200" width="360" height="10" fill="#0ea5e9"/>
-  <rect x="60" y="230" width="300" height="10" fill="#38bdf8"/>
-</svg>

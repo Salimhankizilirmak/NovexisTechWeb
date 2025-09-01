@@ -1,7 +1,8 @@
 {
-  "name": "yalitim-fabrikasi",
+  "name": "novexis-tech",
   "version": "0.1.0",
   "private": true,
+  "description": "Novexis Tech - Yazılım Destek, Mobil Projeler, Donanım Tamiri ve Reklam Çözümleri",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

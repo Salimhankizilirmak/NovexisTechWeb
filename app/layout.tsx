@@ -14,32 +14,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Hitit Yalıtım | Hitpor",
+  title: "Novexis Tech | Yazılım Destek ve Mobil Projeler",
   description:
-    "Isı yalıtım ürünleri, strafor koruyucular ve ısıtma panellerinde modern üretim ve yüksek kalite.",
+    "Yazılım destek, mobil projeler, donanım tamiri, yedek parça ve reklam siteleri çözümleri. Ne Yesek mobil uygulaması ve daha fazlası.",
   icons: {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },
   openGraph: {
-    title: "Hitit Yalıtım | Hitpor",
+    title: "Novexis Tech | Yazılım Destek ve Mobil Projeler",
     description:
-      "Isı yalıtım ürünleri, strafor koruyucular ve ısıtma panellerinde modern üretim ve yüksek kalite.",
+      "Yazılım destek, mobil projeler, donanım tamiri, yedek parça ve reklam siteleri çözümleri. Ne Yesek mobil uygulaması ve daha fazlası.",
     images: [
       {
         url: "/images/logo.png",
         width: 512,
         height: 512,
-        alt: "Hitit Yalıtım Logo",
+        alt: "Novexis Tech Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hitit Yalıtım | Hitpor",
+    title: "Novexis Tech | Yazılım Destek ve Mobil Projeler",
     description:
-      "Isı yalıtım ürünleri, strafor koruyucular ve ısıtma panellerinde modern üretim ve yüksek kalite.",
+      "Yazılım destek, mobil projeler, donanım tamiri, yedek parça ve reklam siteleri çözümleri. Ne Yesek mobil uygulaması ve daha fazlası.",
     images: ["/images/logo.png"],
   },
 } as const;
@@ -51,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900 text-slate-100`}>
         <Header />
         {children}
         <WaveDivider />

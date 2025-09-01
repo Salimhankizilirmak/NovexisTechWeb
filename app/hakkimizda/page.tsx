@@ -6,8 +6,8 @@ import CTA from "@/components/about/CTA";
 import WaveDivider from "@/components/ui/WaveDivider";
 
 export const metadata = {
-  title: "Hakkımızda - Hitit Yalıtım",
-  description: "2008'den beri ısı yalıtımı, strafor koruyucular ve ısıtma panellerinde güvenilir üretim.",
+  title: "Hakkımızda - Novexis Tech",
+  description: "Yazılım destek, mobil projeler, donanım tamiri ve reklam çözümleri ile dijital dünyada öncü.",
 };
 
 export default function AboutPage() {

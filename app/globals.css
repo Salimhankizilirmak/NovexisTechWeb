@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  /* Global colors per latest request */
-  --background: #cdcad9; /* new background */
-  --foreground: #111111; /* text stays dark for contrast */
-  --brand: #caa7d6; /* new accent (was red/anthracite) */
-  --brand-hover: #caa7d6; /* same accent for hover per request */
-  --brand-soft: #e9dff0; /* soft tint of accent */
-  --btn-red: #caa7d6; /* buttons use the same accent */
-  --btn-red-hover: #caa7d6; /* same for hover */
+  /* Global colors - Siyah ve Lacivert tonları */
+  --background: #0f172a; /* Koyu lacivert arka plan */
+  --foreground: #f8fafc; /* Açık metin */
+  --brand: #3b82f6; /* Mavi vurgu rengi */
+  --brand-hover: #2563eb; /* Hover için koyu mavi */
+  --brand-soft: #1e293b; /* Yumuşak mavi ton */
+  --btn-red: #3b82f6; /* Butonlar için mavi */
+  --btn-red-hover: #2563eb; /* Buton hover */
 }
 
 @theme inline {
@@ -22,11 +22,11 @@
 /* Force same palette regardless of system scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #cdcad9;
-    --foreground: #111111;
-    --brand: #caa7d6;
-    --brand-hover: #caa7d6;
-    --brand-soft: #e9dff0;
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --brand: #3b82f6;
+    --brand-hover: #2563eb;
+    --brand-soft: #1e293b;
   }
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 .gradient-brand-light {
-  background: linear-gradient(135deg, #f5f6f7 0%, #eceef1 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 /* Neutral shadow */

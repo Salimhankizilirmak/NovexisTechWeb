@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 320">
-  <rect width="512" height="320" fill="#fff"/>
-  <rect x="96" y="72" width="320" height="176" rx="14" fill="#ffffff" stroke="#caa7d6" stroke-width="4"/>
-  <circle cx="176" cy="140" r="34" fill="#caa7d6" fill-opacity="0.22"/>
-  <circle cx="336" cy="140" r="34" fill="#caa7d6" fill-opacity="0.22"/>
-  <rect x="156" y="198" width="200" height="20" rx="6" fill="#caa7d6" fill-opacity="0.25"/>
-  <text x="256" y="300" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#3b1e46">Ocak Koruyucu</text>
-</svg>

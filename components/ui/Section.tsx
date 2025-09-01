@@ -16,7 +16,7 @@ export default function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`${gradient ? "gradient-brand text-white" : ""} ${className}`}>
+    <section id={id} className={`${gradient ? "gradient-brand text-white" : "bg-slate-900"} ${className}`}>
       <div className={`${container ? "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" : ""} py-16 sm:py-20`}>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
