@@ -51,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-900 text-slate-100`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
         <Header />
         {children}
         <WaveDivider />
